@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Media Pembelajaran</title>
+    <style>
+        /* Reset CSS dan pengaturan dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Hero Section dengan gradasi warna */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Container untuk konten utama */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        /* Grid untuk card mata pelajaran */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        /* Card untuk mata pelajaran */
+        .subject-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background-color: #f0f7ff;
+        }
+        
+        /* Ikon untuk mata pelajaran */
+        .subject-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #2c5282;
+        }
+        
+        .subject-card:hover .subject-icon {
+            transform: scale(1.1);
+        }
+        
+        /* Judul dan deskripsi mata pelajaran */
+        .subject-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a365d;
+        }
+        
+        .subject-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        
+        /* Animasi untuk ikon */
+        .subject-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        /* Responsivitas untuk mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .subject-card {
+                padding: 20px;
+                min-height: 200px;
+            }
+            
+            .subject-icon {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Animasi fade-in untuk elemen */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* Stagger animation untuk card */
+        .subject-card:nth-child(1) {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .subject-card:nth-child(2) {
+            animation: fadeIn 0.8s ease-out 0.2s;
+            animation-fill-mode: both;
+        }
+        
+        .subject-card:nth-child(3) {
+            animation: fadeIn 0.8s ease-out 0.4s;
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero fade-in">
+        <h1>Portal Media Pembelajaran</h1>
+        <p>Pilih mata pelajaran yang ingin kamu pelajari</p>
+    </header>
+    
+    <!-- Konten Utama -->
+    <main class="container">
+        <div class="subjects-grid">
+            <!-- Card Fisika -->
+            <a href="https://sites.google.com/sman1bogor.sch.id/aoranhaofandahnixiim4-2/materi-pembelajaran-fisika" class="subject-card">
+                <div class="subject-icon">⚛️</div>
+                <h2>Fisika</h2>
+                <p>Materi, simulasi interaktif, dan kuis Fisika.</p>
+            </a>
+            
+            <!-- Card Pendidikan Agama Islam -->
+            <a href="https://sites.google.com/sman1bogor.sch.id/aoranhaofandahnixiim4-2/materi-pembelajaran-pai" class="subject-card">
+                <div class="subject-icon">🕌</div>
+                <h2>Pendidikan Agama Islam</h2>
+                <p>Materi, simulasi interaktif, dan kuis PAI.</p>
+            </a>
+            
+            <!-- Card Matematika Wajib -->
+            <a href="https://sites.google.com/sman1bogor.sch.id/aoranhaofandahnixiim4-2/materi-pembelajaran-matematika-wajib" class="subject-card">
+                <div class="subject-icon">📐</div>
+                <h2>Matematika Wajib</h2>
+                <p>Materi, simulasi interaktif, dan kuis Matematika Wajib.</p>
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Aoran Haofan Dahni XII M4-2</p>
+    </footer>
+</body>
+</html>
